@@ -1,7 +1,10 @@
 import pandas as pd
 import re 
 import matplotlib.pyplot as plt 
+<<<<<<< HEAD
 from scipy.stats import linregress
+=======
+>>>>>>> 053bef27ad3bc5d6ee68c099df2c800b37d1b29d
 
 #Reading the csv file into a pandas dataframe
 df = pd.read_csv("kaggle_files/fifa21 raw data v2.csv")
@@ -79,6 +82,7 @@ star = star.map(clear_star)
 my_dataframe['Star'] = star
 print(f'The cleaned star values are: \n{my_dataframe["Star"]} and uncleaned values are: \n{df["IR"]}')  
 
+<<<<<<< HEAD
 result = linregress(my_dataframe['Wage'],my_dataframe['Value'])
 y_ped = result.slope * my_dataframe['Wage'] + result.intercept
 
@@ -107,6 +111,20 @@ plt.legend()
 plt.show()
 
 
+=======
+
+#Plotting the scatter plot of Wages vs Value finding players who are (valuable and have high wages),
+#(low wages and low value) , (high wages and low value underpaid) and (low wages and high value overpaid)
+plt.scatter(my_dataframe['Wage'],my_dataframe['Value'], alpha=0.5)
+plt.title("Valuability of players")
+plt.xlabel("Wages")
+plt.grid(True)
+plt.ylabel("Value")
+plt.show()
+
+
+print(f'The dataframe with the cleaned data is: \n{my_dataframe.dropna()}')
+>>>>>>> 053bef27ad3bc5d6ee68c099df2c800b37d1b29d
 """
 print(f'Is there NaN in Wage column? {my_dataframe["Wage"].isnull().values.any()} and {wages.isnull().values.any()} its shape is {my_dataframe["Wage"].shape} and {wages.shape}')
 print(f'Is there NaN in Value column? {my_dataframe["Value"].isnull().values.any()} and {value.isnull().values.any()} its shape is {my_dataframe["Value"].shape} and {value.shape}')
@@ -117,4 +135,8 @@ print(f'Is there NaN in Years_of_Play column? {my_dataframe["Years_of_Play"].isn
 print(f'Is there NaN in Play_Duration column? {my_dataframe["Play_Duration"].isnull().values.any()} and {play_duration.isnull().values.any()} its shape is {my_dataframe["Play_Duration"].shape} and {play_duration.shape}')
 print(f'Is there NaN in Name column? {my_dataframe["Name"].isnull().values.any()} and {df["Name"].isnull().values.any()} its shape is {my_dataframe["Name"].shape} and {df["Name"].shape}')
 print(f'Is there NaN in Joined column? {my_dataframe["Joined"].isnull().values.any()} and {df['Joined'].isnull().values.any()} its shape is {my_dataframe["Joined"].shape} and {df['Joined'].shape}')
+<<<<<<< HEAD
 """
+=======
+"""
+>>>>>>> 053bef27ad3bc5d6ee68c099df2c800b37d1b29d
